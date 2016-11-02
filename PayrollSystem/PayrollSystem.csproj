@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Axan2.cs" />
     <Compile Include="Bethaly.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="EmployeeFactory.cs" />
