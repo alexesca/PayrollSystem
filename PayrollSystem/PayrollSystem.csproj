@@ -47,6 +47,7 @@
     <Compile Include="EmployeeFactory.cs" />
     <Compile Include="Employee_Commission.cs" />
     <Compile Include="Employee_Hourly.cs" />
+    <Compile Include="Miranda.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
