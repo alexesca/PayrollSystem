@@ -8,5 +8,9 @@ namespace PayrollSystem
 {
     class Bethaly
     {
+        public static void Hello()
+        {
+            Console.WriteLine("Hello World");
+        }
     }
 }
