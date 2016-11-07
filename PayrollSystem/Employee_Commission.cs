@@ -15,7 +15,7 @@ namespace PayrollSystem
 {
     public class CommEmployee : Employee
 	{
-		public double commRate { get; private set; }
+		public double commRate { get; protected set; }
 
         // Default constructor
         public CommEmployee()
@@ -38,6 +38,7 @@ namespace PayrollSystem
             employee_Paymethod = newPayMethod;
             employee_Type = newEmpType;
             commRate = newRate;
+            Console.WriteLine("Commission employee class created.");
         }
 
         // Calculate payment from rate and sales
