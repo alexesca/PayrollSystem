@@ -15,7 +15,7 @@ namespace PayrollSystem.Tests
         public void CommEmployeeTest()
         {
             CommEmployee testEmp = new CommEmployee
-                ("1234", "John Smith", "123 Shadow Wood UT", "Mailed check", "Commission", 0.05);
+                ("1234", "John Smith", "123 Shadow Wood UT", "Mailed check", 0.05);
             Assert.AreEqual(testEmp.commRate, 0.05);
             Assert.AreEqual(testEmp.EmployeeName, "John Smith");
         }
@@ -32,7 +32,7 @@ namespace PayrollSystem.Tests
         public void calcPaymentTest()
         {
             CommEmployee testEmp = new CommEmployee
-                ("1234", "John Smith", "123 Shadow Wood UT", "Mailed check", "Commission", 0.05);
+                ("1234", "John Smith", "123 Shadow Wood UT", "Mailed check", 0.05);
 
             double expected = 77.3;
             double actual = testEmp.calcPayment(0.05, 1546);

@@ -30,15 +30,28 @@ namespace PayrollSystem
 
         // Takes parameters to create new employee
         public CommEmployee(String newID, String newName, String newAddress,
-            String newPayMethod, String newEmpType, double newRate)
+            String newPayMethod, double newRate)
         {
             employee_ID = newID;
             employee_Name = newName;
             employee_Address = newAddress;
             employee_Paymethod = newPayMethod;
-            employee_Type = newEmpType;
+            employee_Type = "Commission";
             commRate = newRate;
             Console.WriteLine("Commission employee class created.");
+        }
+
+        public CommEmployee(String newID, String newName, String newAddress,
+            String newPayMethod, double newRate, Union newUnion)
+        {
+            employee_ID = newID;
+            employee_Name = newName;
+            employee_Address = newAddress;
+            employee_Paymethod = newPayMethod;
+            employee_Type = "Commission-Union";
+            commRate = newRate;
+            employee_Union = newUnion;
+            Console.WriteLine("Commission union employee class created.");
         }
 
         // Calculate payment from rate and sales
