@@ -13,20 +13,38 @@ using System.Threading.Tasks;
 
 namespace PayrollSystem
 {
-	class CommEmployee : Employee
+    public class CommEmployee : Employee
 	{
-		private double commRate { get; set; }
+		public double commRate { get; private set; }
 
-		// Calculate payment from rate and sales
-		private double calcPayment(double rate, double salesAmount)
+        // Default constructor
+        public CommEmployee()
+        {
+            employee_ID = "0000";
+            employee_Name = "Name";
+            employee_Address = "Address";
+            employee_Paymethod = "PayMethod";
+            employee_Type = "Type";
+            commRate = 0;
+        }
+
+        // Takes parameters to create new employee
+        public CommEmployee(String newID, String newName, String newAddress,
+            String newPayMethod, String newEmpType, double newRate)
+        {
+            employee_ID = newID;
+            employee_Name = newName;
+            employee_Address = newAddress;
+            employee_Paymethod = newPayMethod;
+            employee_Type = newEmpType;
+            commRate = newRate;
+        }
+
+        // Calculate payment from rate and sales
+        public double calcPayment(double rate, double salesAmount)
 		{
 			double payment = commRate * salesAmount;
 			return payment;
 		}
-
-		//private Payment payComm (double payment, Payment p)
-		//{
-		//    return p;
-		//}
 	}
 }
