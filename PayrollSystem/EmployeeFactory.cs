@@ -11,7 +11,7 @@ using PayrollSystem;
 
 			if (employeeType.Equals("hourly", StringComparison.InvariantCultureIgnoreCase))
 			{
-				return new Employee_Hourly();
+				return new EmployeeHourly();
 			}
 			else if (employeeType.Equals("commission", StringComparison.InvariantCultureIgnoreCase))
 			{
