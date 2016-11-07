@@ -10,12 +10,6 @@ namespace PayrollSystem
     {
         static void Main(string[] args)
         {
-            Employee_Hourly Axan = new Employee_Hourly();
-            CommEmployee Miranda = new CommEmployee();
-
-            Console.WriteLine(Axan.EmployeeID);
-
-            Console.ReadLine();
         }
     }
 }
