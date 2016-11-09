@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PayrollSystem
 {
-    class Employee_Salary : Employee
+   public class Employee_Salary : Employee
     {
         private string payment { get; set; }
 
