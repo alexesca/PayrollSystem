@@ -71,7 +71,31 @@ namespace PayrollSystem
 		protected String employee_Address;
 		protected String employee_Paymethod;
 		protected String employee_Type;
+        protected Union employee_Union;
+    }
 
+    // If employee is from union, use the following
+    public class Union
+    {
+        double weeklyDuesRate;
 
-	}
+        public Union(double newDueRate)
+        {
+            weeklyDuesRate = newDueRate;
+        }
+
+        // Calculate weekly dues and return new payment
+        public double deduct(double rate, double pay)
+        {
+            double deduction = rate * pay;
+            double netPay = pay - deduction;
+            return netPay;
+        }
+
+        // If service charges apply, call following
+        public double serviceCharge (double charge, double nextPay)
+        {
+            return nextPay - charge;
+        }
+    }
 }
