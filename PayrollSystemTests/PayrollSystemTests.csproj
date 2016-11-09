@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{058ADBC8-2E1F-4F4B-8881-4A3E452B6FE3}</ProjectGuid>
+    <ProjectGuid>{E344EF29-370D-4904-AC21-8327C6860874}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PayrollSystemTests</RootNamespace>
@@ -51,8 +51,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Employee_SalaryTests.cs" />
+    <Compile Include="CommEmployeeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnionTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PayrollSystem\PayrollSystem.csproj">
