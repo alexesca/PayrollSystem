@@ -11,16 +11,16 @@ using PayrollSystem;
 
 			if (employeeType.Equals("hourly", StringComparison.InvariantCultureIgnoreCase))
 			{
-				return new Employee_Hourly();
+				return new EmployeeHourly();
 			}
 			else if (employeeType.Equals("commission", StringComparison.InvariantCultureIgnoreCase))
 			{
 				return new CommEmployee();
 			}
-			//else if (employeeType.Equals("hourly", StringComparison.InvariantCultureIgnoreCase))
-			//{
-			//	return new Employee_Salary();
-			//}
+			else if (employeeType.Equals("hourly", StringComparison.InvariantCultureIgnoreCase))
+			{
+				//return new Employee_Salary();
+			}
 
 		return null;
 		}
