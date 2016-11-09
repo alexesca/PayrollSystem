@@ -39,6 +39,7 @@ namespace PayrollSystem
             employee_Type = "Commission";
             commRate = newRate;
             Console.WriteLine("Commission employee class created.");
+
         }
 
         public CommEmployee(String newID, String newName, String newAddress,
