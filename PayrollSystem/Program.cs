@@ -9,6 +9,7 @@ namespace PayrollSystem
     class Program
     {
         static public List<Employee> listOfEmployee = new List<Employee>();
+        static private IDGenerator createID = new IDGenerator();
         static void Main(string[] args)
         {
             bool flag = true;
@@ -30,11 +31,11 @@ namespace PayrollSystem
                             var paymethod = "";
                             var id = "";
                             EmployeeFactory factory = new EmployeeFactory();
-                            Console.WriteLine("Please add the employee name");
+                            Console.WriteLine("\nPlease add the employee name");
                             name = Console.ReadLine();
-                            Console.WriteLine("Please add the employee address");
+                            Console.WriteLine("\nPlease add the employee address");
                             address = Console.ReadLine();
-                            Console.WriteLine("Please select the employee type:");
+                            Console.WriteLine("\nPlease select the employee type:");
                             Console.WriteLine("1. Comission");
                             Console.WriteLine("2. Hourly");
                             Console.WriteLine("3. Salary");
@@ -55,9 +56,9 @@ namespace PayrollSystem
                                     break;
 
                             }
-                            Console.WriteLine("Please add the employee id");
-                            id = Console.ReadLine();
-                            Console.WriteLine("Please add the employee paymethod");
+                            id = createID.generateID(listOfEmployee);
+                            Console.WriteLine("\nGenerated ID: " + id);
+                            Console.WriteLine("\nPlease add the employee paymethod");
                             paymethod = Console.ReadLine();
 
                             Employee newEmployee = factory.getEmployee(type);
@@ -79,17 +80,38 @@ namespace PayrollSystem
                             }
                             else
                             {
-                                Console.WriteLine("There are: " + listOfEmployee.Count + " employees in the system");
-                                Console.WriteLine("Here is their information");
-                                foreach (Employee employee in listOfEmployee)
+                                Console.WriteLine("Choose the table you want to show:\n1.All\n2.Salaried\n3.Hourly\n4.Commission");
+                                string choice = Console.ReadLine();
+                                switch (choice)
                                 {
-                                    Console.WriteLine("Employee's name: " + employee.EmployeeName);
-                                    Console.WriteLine("Employee's address: " + employee.EmployeeAddress);
-                                    Console.WriteLine("Employee's ID: " + employee.EmployeeID);
-                                    Console.WriteLine("Employee's type: " + employee.EmployeeType);
-                                    Console.WriteLine("Employee's paymethod: " + employee.EmployeePaymethod);
+                                    case "1":
+                                        {
+                                            new DisplayEmployee().displayTableAllEmployees(listOfEmployee);
+                                            break;
+                                        }
+                                    case "2":
+                                        {
+                                            new DisplayEmployee().displaySalariedEmployee(listOfEmployee);
+                                            break;
+                                        }
+                                    case "3":
+                                        {
+                                            new DisplayEmployee().displayHourlyEmployee(listOfEmployee);
+                                            break;
+                                        }
+                                    case "4":
+                                        {
+                                            new DisplayEmployee().displayCommissionEmployee(listOfEmployee);
+                                            break;
+                                        }
+                                    default:
+                                        {
+                                            new DisplayEmployee().displayHourlyEmployee(listOfEmployee);
+                                            break;
+                                        }
+                                     
                                 }
-
+      
                             }
 
 

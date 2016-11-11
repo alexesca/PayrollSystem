@@ -44,11 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bethaly.cs" />
+    <Compile Include="DisplayEmployee.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="EmployeeFactory.cs" />
     <Compile Include="Employee_Commission.cs" />
     <Compile Include="EmployeeHourly.cs" />
     <Compile Include="Employee_Salary.cs" />
+    <Compile Include="IDGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
