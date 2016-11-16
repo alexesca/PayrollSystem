@@ -17,12 +17,12 @@ using PayrollSystem;
 			{
 				return new CommEmployee();
 			}
-			else if (employeeType.Equals("hourly", StringComparison.InvariantCultureIgnoreCase))
+			else if (employeeType.Equals("salary", StringComparison.InvariantCultureIgnoreCase))
 			{
-				//return new Employee_Salary();
-			}
+                return new Employee_Salary();
+            }
 
-		return null;
+		    return null;
 		}
 
 	}

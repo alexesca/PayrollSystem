@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PayrollSystem
+namespace PayrollSystemTests
 {
-    class Bethaly
+    class Employee_SalaryTests
     {
     }
 }
