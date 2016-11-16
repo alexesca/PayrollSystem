@@ -79,6 +79,11 @@ namespace PayrollSystem
     {
         double weeklyDuesRate;
 
+        public Union()
+        {
+            weeklyDuesRate = 0;
+        }
+
         public Union(double newDueRate)
         {
             weeklyDuesRate = newDueRate;
@@ -96,6 +101,11 @@ namespace PayrollSystem
         public double serviceCharge (double charge, double nextPay)
         {
             return nextPay - charge;
+        }
+
+        public void printRates(double duesRate)
+        {
+            Console.WriteLine("Dues rate: " + duesRate);
         }
     }
 }
