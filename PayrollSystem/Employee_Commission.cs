@@ -62,5 +62,10 @@ namespace PayrollSystem
 			double payment = commRate * salesAmount;
 			return payment;
 		}
+
+	    public void printSales(double salesAmount)
+	    {
+	        Console.WriteLine("Sales: $" + salesAmount);
+	    }
 	}
 }
