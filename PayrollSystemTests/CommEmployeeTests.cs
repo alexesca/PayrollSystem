@@ -15,9 +15,13 @@ namespace PayrollSystem.Tests
         public void CommEmployeeTest()
         {
             CommEmployee testEmp = new CommEmployee
-                ("1234", "John Smith", "123 Shadow Wood UT", "Mailed check", 0.05);
+                ("1234", "John Smith", "123 Shadow UT", "Mailed check", 0.05);
             Assert.AreEqual(testEmp.commRate, 0.05);
             Assert.AreEqual(testEmp.EmployeeName, "John Smith");
+            Assert.AreEqual(testEmp.EmployeeAddress, "123 Shadow UT");
+            Assert.AreEqual(testEmp.EmployeeID, "1234");
+            Assert.AreEqual(testEmp.EmployeePaymethod, "Mailed check");
+            Assert.AreEqual(testEmp.commRate, 0.05);
         }
 
         [TestMethod()]
@@ -25,6 +29,8 @@ namespace PayrollSystem.Tests
         {
             CommEmployee testEmp = new CommEmployee();
             Assert.AreEqual(testEmp.EmployeeID, "0000");
+            Assert.AreEqual(testEmp.EmployeeAddress, "Address");
+            Assert.AreEqual(testEmp.EmployeeName, "Name");
             Assert.AreEqual(testEmp.commRate, 0);
         }
 
@@ -32,12 +38,14 @@ namespace PayrollSystem.Tests
         public void calcPaymentTest()
         {
             CommEmployee testEmp = new CommEmployee
-                ("1234", "John Smith", "123 Shadow Wood UT", "Mailed check", 0.05);
+                ("1234", "John Smith", "123 Shadow UT", "Mailed check", 0.05);
 
             double expected = 77.3;
             double actual = testEmp.calcPayment(0.05, 1546);
 
+            Assert.IsNotNull(actual);
             Assert.AreEqual(expected, Math.Round(actual,1));
+            
         }
     }
 }
