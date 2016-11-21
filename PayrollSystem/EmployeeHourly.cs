@@ -1,7 +1,7 @@
 ﻿using System;
 namespace PayrollSystem
 {
-	class EmployeeHourly : Employee
+	public class EmployeeHourly : Employee
 	{
 		private double   hourlyPay;
 		private double   hoursWorked;
