@@ -15,9 +15,11 @@ namespace PayrollSystem
         {
             this.paymentSalary = "No Payment Method has been selected";
         }
+
         //Crete an employ 
         public Employee_Salary(String newID, String newName, String newAddress,
           String newPayMethod, double newRate, Union newEmployeeUnion)
+        
         // protected Union employee_Union;
         {
             employee_ID = newID;
@@ -28,7 +30,7 @@ namespace PayrollSystem
             employee_Union = newEmployeeUnion;
         }
 
-        private string PayCheckMethod(string paymethod)
+        public string PayCheckMethod(string paymethod)
         {
             if (paymethod == "Pick up")
             {
