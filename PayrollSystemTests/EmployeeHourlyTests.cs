@@ -15,13 +15,26 @@ namespace PayrollSystem.Tests
         [TestMethod()]
         public void EmployeeHourlyTest()
         {
-            //Assert.Fail();
+            EmployeeHourly testEmp = new EmployeeHourly();
+            Assert.AreEqual(testEmp.HourlyPay, 7.25);
+            Assert.AreEqual(testEmp.EmployeeType, "Hourly");
+            Assert.AreEqual(testEmp.HoursWorked, 0);
+            Assert.IsNull(testEmp.EmployeeName);
+            Assert.IsNull(testEmp.EmployeeID);
+            Assert.IsNull(testEmp.EmployeeAddress);
+            Assert.AreEqual(testEmp.PeriodPaymentAmount, 0);
         }
 
         [TestMethod()]
         public void EmployeeHourlyTest1()
         {
-           // Assert.Fail();
+            EmployeeHourly testEmp = new EmployeeHourly("Juan Perez", "Emp1", "560 Idaho Avenue, Provo UT", "Mailed check", 7.5);
+            Assert.AreEqual(testEmp.EmployeeName, "Juan Perez");
+            Assert.AreEqual(testEmp.EmployeeID, "Emp1");
+            Assert.AreEqual(testEmp.EmployeePaymethod, "Mailed check");
+            Assert.AreEqual(testEmp.EmployeeAddress, "560 Idaho Avenue, Provo UT");
+            Assert.AreEqual(testEmp.HourlyPay, 7.5);
+            Assert.AreEqual(testEmp.PeriodPaymentAmount, 0);
         }
 
         [TestMethod()]
@@ -34,6 +47,16 @@ namespace PayrollSystem.Tests
             Assert.AreEqual(testEmp.EmployeeAddress, "560 Idaho Avenue, Provo UT");
             Assert.AreEqual(testEmp.HourlyPay, 7.5);
             Assert.AreEqual(testEmp.PeriodPaymentAmount, 0);
+        }
+
+        [TestMethod()]
+        public void calculatePayment()
+        {
+            EmployeeHourly testEmp = new EmployeeHourly("Juan Perez", "Emp1", "560 Idaho Avenue, Provo UT", "Mailed check", 7.5);
+            testEmp.calculatePayment();
+            Assert.AreEqual(testEmp.PeriodPaymentAmount, 0);
+            testEmp.HoursWorked = 2;
+            Assert.AreEqual(testEmp.PeriodPaymentAmount, 15);
         }
 
         [TestMethod()]
