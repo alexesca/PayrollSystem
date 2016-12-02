@@ -42,6 +42,7 @@ namespace PayrollSystem
 
         }
 
+        // Union employee
         public CommEmployee(String newID, String newName, String newAddress,
             String newPayMethod, double newRate, Union newUnion)
         {
@@ -61,5 +62,10 @@ namespace PayrollSystem
 			double payment = commRate * salesAmount;
 			return payment;
 		}
+
+	    public void printSales(double salesAmount)
+	    {
+	        Console.WriteLine("Sales: $" + salesAmount);
+	    }
 	}
 }
