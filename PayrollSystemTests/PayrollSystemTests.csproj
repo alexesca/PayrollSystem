@@ -54,6 +54,7 @@
     <Compile Include="CommEmployeeTests.cs" />
     <Compile Include="EmployeeHourlyTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalaryTests.cs" />
     <Compile Include="UnionTests.cs" />
   </ItemGroup>
   <ItemGroup>
