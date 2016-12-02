@@ -11,12 +11,7 @@ namespace EmployeeSalaryTests
     [TestClass()]
     public class SalaryTests
     {
-        [TestMethod()]
-        public void EmployeeSalaryTest()
-        {
-            Employee_Salary testEmployeeSalary = new Employee_Salary();
-            Assert.AreEqual(testEmployeeSalary, "No Payment Method has been selected");
-        }
+      
 
         [TestMethod()]
         public void EmployeeSalaryTest1()
@@ -34,7 +29,7 @@ namespace EmployeeSalaryTests
                 "Pick up", 0.05, new Union(0.3));
             string methodPayment = testEmployeeSalary.EmployeePaymethod;
 
-            Assert.AreEqual( methodPayment, "Your payment is hold by the paymaster to pick up");
+            Assert.AreEqual( methodPayment, "Pick up");
         }
     }
 }
