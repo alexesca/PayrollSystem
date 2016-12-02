@@ -47,8 +47,9 @@
     <Compile Include="Employee.cs" />
     <Compile Include="EmployeeFactory.cs" />
     <Compile Include="Employee_Commission.cs" />
-    <Compile Include="EmployeeHourly.cs" />
+    <Compile Include="Hourly classes\EmployeeHourly.cs" />
     <Compile Include="Employee_Salary.cs" />
+    <Compile Include="Hourly classes\reportHourly.cs" />
     <Compile Include="IDGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
