@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollSystem", "PayrollSystem\PayrollSystem.csproj", "{DEB17BE1-0700-4CBE-83D5-25B462B5C7A6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollSystemTests", "PayrollSystemTests\PayrollSystemTests.csproj", "{E344EF29-370D-4904-AC21-8327C6860874}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{6C48CA15-26F1-4070-9854-27DB40C18BDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{E344EF29-370D-4904-AC21-8327C6860874}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E344EF29-370D-4904-AC21-8327C6860874}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E344EF29-370D-4904-AC21-8327C6860874}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C48CA15-26F1-4070-9854-27DB40C18BDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C48CA15-26F1-4070-9854-27DB40C18BDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C48CA15-26F1-4070-9854-27DB40C18BDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C48CA15-26F1-4070-9854-27DB40C18BDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
