@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ namespace GUI
     /// </summary>
     public partial class Add_Employee : Window
     {
+        
         public Add_Employee()
         {
             InitializeComponent();
@@ -26,7 +28,8 @@ namespace GUI
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
+           // Message.Content = tableLits[0];
+            //Environment.Exit(0);
         }
     }
 }

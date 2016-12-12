@@ -10,7 +10,7 @@
         <Grid HorizontalAlignment="Left" Height="232" Margin="10,10,0,0" VerticalAlignment="Top" Width="498">
             <Button x:Name="button" Content="Done" HorizontalAlignment="Left" Height="31" Margin="403,191,0,0" VerticalAlignment="Top" Width="85" Click="button_Click"/>
         </Grid>
-        <Label x:Name="label" Content="Here we are going to add an employee&#xD;&#xA; &#xD;&#xA;:D" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="92" Width="337"/>
+        <Label x:Name="Message" Content="Here we are going to add an employee&#xD;&#xA; &#xD;&#xA;:D" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="92" Width="337"/>
 
     </Grid>
 </Window>

@@ -30,12 +30,12 @@ namespace PayrollSystem
                         //Getting headers
                         if (line == 1)
                         {
-                            getHeaders(table1, str);
+                            getHeaders(table1[0][0], str);
                         }
                         else
                         {
                             //Adding students to the list
-                            addEmployeeToTable(table1, str);
+                            addEmployeeToTable(table1[0][0], str);
                         }
                         line++;
                     }
@@ -46,7 +46,7 @@ namespace PayrollSystem
             //Catches any exception
             catch (Exception e)
             {
-                //Console.WriteLine("{0} Exception .", e);
+                Console.WriteLine("{0} Exception .", e);
             }
             return list;
         }
@@ -135,4 +135,4 @@ namespace PayrollSystem
         }
     }
 }
-}
+

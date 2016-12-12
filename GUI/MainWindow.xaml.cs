@@ -93,7 +93,7 @@ namespace GUI
 
         private void buttonAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            Console.WriteLine(tableLits);
             //   Form1 form1 = new Form1();
             //  form1.Show();
             Add_Employee NewEmployee = new Add_Employee();
