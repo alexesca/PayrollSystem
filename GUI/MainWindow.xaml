@@ -3,31 +3,41 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GUI"
+       
+      
         mc:Ignorable="d"
-        Title="Roster" Height="573.447" Width="903.105">
-    <ContentControl HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" Height="511" Width="858">
-        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="473" Margin="5,10,0,0" VerticalAlignment="Top" Width="831" SelectionChanged="tabControl_SelectionChanged">
-            <TabItem x:Name="tabRoster" Header="Roster" FontFamily="Sitka Small" FontSize="14" FontStretch="Expanded" BorderThickness="0,0,10,10" Width="120" Height="30" Padding="6,2,10,2">
-                <TabItem.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
-                        <GradientStop Color="#FFE5E5E5" Offset="1"/>
-                    </LinearGradientBrush>
-                </TabItem.Background>
-                <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="50,77,0,0" VerticalAlignment="Top" Height="331" Width="708" SelectionChanged="dataGrid_SelectionChanged"/>
-                    <Button x:Name="buttonAdd" Content="Add" HorizontalAlignment="Left" Height="30" Margin="29,25,0,0" VerticalAlignment="Top" Width="90"/>
-                    <Button x:Name="buttonDelete" Content="Delete" HorizontalAlignment="Left" Height="30" Margin="163,25,0,0" VerticalAlignment="Top" Width="90"  ToolTip=" Select employee for options"  ToolTipService.ShowOnDisabled="True" IsEnabled="False"   />
-                    <Button x:Name="buttonUpdate" Content="Update" HorizontalAlignment="Left" Height="30" Margin="302,25,0,0" VerticalAlignment="Top" Width="90" ToolTip=" Select employee for options" ToolTipService.ShowOnDisabled="True" IsEnabled ="False" />
+        Title="Roster" Height="466.447" Width="737.605">
+    <Grid HorizontalAlignment="Left" Height="398" Margin="0,10,0,0" VerticalAlignment="Top" Width="727">
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Margin="10,10,0,0">
+            <MenuItem Header="File" FontSize="15" Height="25" Width="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                <MenuItem Header="Load" Click="MenuItemLoad_Click"/>
+                <MenuItem Header="Save"/>
+                <MenuItem Header="Exit" Click="MenuItem_Click"/>
+            </MenuItem>
+        </Menu>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="338" Margin="10,60,0,0" VerticalAlignment="Top" Width="682">
+            <TabItem x:Name="TabRoster" Header="Roster" Width="70" Height="30" Margin="0"  >
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,-4">
+                    <Button x:Name="buttonAdd" Content="Add" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="buttonAdd_Click"/>
+                    <Button x:Name="buttonDelete" Content="Delete" HorizontalAlignment="Left" Margin="120,10,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False"/>
+                    <Button x:Name="buttonUpdate" Content="Update" HorizontalAlignment="Left" Margin="252,10,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" />
+                    <DataGrid x:Name="dataGridEmployee" HorizontalAlignment="Left" Margin="30,49,0,0" VerticalAlignment="Top" Height="225" Width="612" />
                 </Grid>
             </TabItem>
-            <TabItem x:Name="TabPayment" Header="Payment" Width="120" Height="30" Margin="-20,-2,-2,0" BorderThickness="0,0,10,10" FontFamily="Sitka Small" FontSize="14" FontStretch="Expanded">
-                <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="dataGrid1" HorizontalAlignment="Left" Height="352" Margin="36,10,0,0" VerticalAlignment="Top" Width="755"/>
-                    <Button x:Name="buttonPay" Content="Pay All" HorizontalAlignment="Left" Height="30" Margin="694,383,0,0" VerticalAlignment="Top" Width="90"/>
+            <TabItem x:Name="TabPayment" Header="Payment" BorderThickness="2" Width="75" Height="30">
+                <Grid Background="#FFE5E5E5" Margin="4,2,-4,-2">
+                    <Label x:Name="label" Content="Select Type" FontSize="15" HorizontalAlignment="Left" Margin="52,46,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.868,-0.115" />
+                    <ComboBox x:Name="comboBoxType" HorizontalAlignment="Left" Margin="29,96,0,0" VerticalAlignment="Top" Width="125" Height="28" IsEnabled="False" SelectionChanged="comboBoxType_SelectionChanged"/>
+                    <DataGrid x:Name="dataGridType" HorizontalAlignment="Left" Margin="242,29,0,0" VerticalAlignment="Top" Height="201" Width="358"/>
+                    <Button x:Name="buttonPayAll" Content="Pay All" HorizontalAlignment="Left" Margin="52,162,0,0" VerticalAlignment="Top" Width="76" IsEnabled="False"/>
                 </Grid>
             </TabItem>
         </TabControl>
-    </ContentControl>
+        <TextBox x:Name="textBoxPath" HorizontalAlignment="Left" Height="30" Margin="251,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340"/>
+        <Label x:Name="label1" Content="File Path" HorizontalAlignment="Left" Margin="157,10,0,0" VerticalAlignment="Top" Width="74" FontSize="15" Height="31"/>
+    </Grid>
 </Window>
+   
+    
+    
+
