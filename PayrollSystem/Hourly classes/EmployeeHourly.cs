@@ -23,7 +23,7 @@ namespace PayrollSystem
 
         public EmployeeHourly(String name, String ID, String address, String paymentMethod, Double hourlyPay)
         {
-            this.employee_Name          = name;
+            this.employee_LName          = name;
             this.employee_ID            = ID;
             this.employee_Address       = address;
             this.employee_Paymethod     = paymentMethod;

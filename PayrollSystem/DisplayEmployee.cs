@@ -30,7 +30,7 @@ namespace PayrollSystem
 
                 foreach (Employee employee in listOfEmployee)
                 {
-                    Console.WriteLine("|" + String.Format(" {0,-13}|", employee.EmployeeID) + String.Format(" {0,-22}|", employee.EmployeeName) +
+                    Console.WriteLine("|" + String.Format(" {0,-13}|", employee.EmployeeID) + String.Format(" {0,-22}|", employee.EmployeeLName) +
                                  String.Format(" {0,-12}|", employee.EmployeeType) + String.Format(" {0, -22}|", employee.EmployeePaymethod) +
                                  String.Format(" {0,-32}|", employee.EmployeeAddress));
                 }
@@ -65,7 +65,7 @@ namespace PayrollSystem
 
             foreach (Employee employee in salaried)
             {
-                Console.WriteLine("|" + String.Format(" {0,-13}|", employee.EmployeeID) + String.Format(" {0,-22}|", employee.EmployeeName) +
+                Console.WriteLine("|" + String.Format(" {0,-13}|", employee.EmployeeID) + String.Format(" {0,-22}|", employee.EmployeeLName) +
                              String.Format(" {0,-12}|", employee.EmployeeType) + String.Format(" {0, -22}|", employee.EmployeePaymethod) +
                              String.Format(" {0,-32}|", employee.EmployeeAddress));
             }
@@ -99,7 +99,7 @@ namespace PayrollSystem
 
             foreach (Employee employee in hourly)
             {
-                Console.WriteLine("|" + String.Format(" {0,-13}|", employee.EmployeeID) + String.Format(" {0,-22}|", employee.EmployeeName) +
+                Console.WriteLine("|" + String.Format(" {0,-13}|", employee.EmployeeID) + String.Format(" {0,-22}|", employee.EmployeeLName) +
                              String.Format(" {0,-12}|", employee.EmployeeType) + String.Format(" {0, -22}|", employee.EmployeePaymethod) +
                              String.Format(" {0,-32}|", employee.EmployeeAddress));
             }
@@ -133,7 +133,7 @@ namespace PayrollSystem
 
             foreach (Employee employee in commission)
             {
-                Console.WriteLine("|" + String.Format(" {0,-13}|", employee.EmployeeID) + String.Format(" {0,-22}|", employee.EmployeeName) +
+                Console.WriteLine("|" + String.Format(" {0,-13}|", employee.EmployeeID) + String.Format(" {0,-22}|", employee.EmployeeLName) +
                              String.Format(" {0,-12}|", employee.EmployeeType) + String.Format(" {0, -22}|", employee.EmployeePaymethod) +
                              String.Format(" {0,-32}|", employee.EmployeeAddress));
             }

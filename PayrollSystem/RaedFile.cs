@@ -15,6 +15,7 @@ namespace PayrollSystem
         {
 
             List<Employee> list = new List<Employee>();
+            
             try
             {
                 using (StreamReader reader = new StreamReader(file))

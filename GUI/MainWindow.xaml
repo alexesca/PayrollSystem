@@ -30,6 +30,9 @@
                     <ComboBox x:Name="comboBoxType" HorizontalAlignment="Left" Margin="29,96,0,0" VerticalAlignment="Top" Width="125" Height="28" IsEnabled="False" SelectionChanged="comboBoxType_SelectionChanged"/>
                     <DataGrid x:Name="dataGridType" HorizontalAlignment="Left" Margin="242,29,0,0" VerticalAlignment="Top" Height="201" Width="358"/>
                     <Button x:Name="buttonPayAll" Content="Pay All" HorizontalAlignment="Left" Margin="52,162,0,0" VerticalAlignment="Top" Width="76" IsEnabled="False"/>
+                    <Button x:Name="ShowTest" Content="show" HorizontalAlignment="Left" Margin="38,262,0,0" VerticalAlignment="Top" Width="75" Click="ShowTest_Click"/>
+                    <Label x:Name="labelshow" Content="Label" HorizontalAlignment="Left" Margin="242,262,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBoxShow" HorizontalAlignment="Left" Height="55" Margin="295,235,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="371"/>
                 </Grid>
             </TabItem>
         </TabControl>

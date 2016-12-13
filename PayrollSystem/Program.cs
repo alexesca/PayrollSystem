@@ -62,7 +62,7 @@ namespace PayrollSystem
                             paymethod = Console.ReadLine();
 
                             Employee newEmployee = factory.getEmployee(type);
-                            newEmployee.EmployeeName = name;
+                            newEmployee.EmployeeFName = name;
                             newEmployee.EmployeeID = id;
                             newEmployee.EmployeeAddress = address;
                             newEmployee.EmployeeType = type;

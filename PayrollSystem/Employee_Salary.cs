@@ -8,6 +8,19 @@ namespace PayrollSystem
 {
    public class Employee_Salary : Employee
     {
+        private double rate;
+
+        public double Rate
+        {
+            get
+            {
+                return rate;
+            }
+            set
+            {
+                rate = value;
+            }
+        }
         private string paymentSalary { get; set; }
 
         //Defoult Employ Constructor
@@ -23,7 +36,7 @@ namespace PayrollSystem
         // protected Union employee_Union;
         {
             employee_ID = newID;
-            employee_Name = newName;
+            employee_LName = newName;
             employee_Address = newAddress;
             employee_Paymethod = newPayMethod;
             employee_Type = "Commission";
