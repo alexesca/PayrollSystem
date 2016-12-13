@@ -48,7 +48,10 @@ namespace PayrollSystem
 
         public List<Employee> convertTableToEmployee()
         {
+            //Convert tables into genetic list 
             DataTableToList();
+
+            //extract all the info to create the employee object
             for(int i = 0; i < employeesInfoTB.Count; i++)
             {
                 String id               = employeesInfoTB[i][0].ToString();
@@ -84,6 +87,7 @@ namespace PayrollSystem
 
             }
 
+            // return the list of employee
             return employeeList;
         }
         

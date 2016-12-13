@@ -68,24 +68,8 @@ namespace GUI
                 {
                     tableLits.Add(new List<DataTable> {dt});
                     comboBoxType.Items.Add(dt.TableName);
-                    //if ( i == 0)
-                    //{
-                    //    employeesInfo = dt.AsEnumerable().ToList();
-                    //}else if( i == 1)
-                    //{
-                    //    hourlyEmployee = dt.AsEnumerable().ToList();
-                    //} else if ( i == 2 )
-                    //{
-                    //    salaryEmployee = dt.AsEnumerable().ToList();
-                    //}else if ( i == 3)
-                    //{
-                    //    commisionEmployee = dt.AsEnumerable().ToList();
-                    //}
-                    //i++;
+                    
                 }
-
-
-
 
                 reader.Close();
                 //Add a reference to the class PayRollSystem
@@ -94,7 +78,10 @@ namespace GUI
 
                 dataGridEmployee.ItemsSource = tableset.Tables["Employees"].DefaultView;
             }
+            // creating the employee generator to convert the table into objects
             CreateEmployeeObjects employeeGenerator = new CreateEmployeeObjects(tableset);
+
+            // convert the table into employee object
             employeeList = employeeGenerator.convertTableToEmployee();
         }
 
