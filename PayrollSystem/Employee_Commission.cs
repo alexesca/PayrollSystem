@@ -57,7 +57,7 @@ namespace PayrollSystem
 
         // Union employee
         public CommEmployee(String newID, String newName, String newAddress,
-            String newPayMethod, double newRate, Union newUnion)
+            String newPayMethod, double newRate, Boolean newUnion)
         {
             employee_ID = newID;
             employee_LName = newName;

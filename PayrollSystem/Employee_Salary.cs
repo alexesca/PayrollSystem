@@ -31,7 +31,7 @@ namespace PayrollSystem
 
         //Crete an employ 
         public Employee_Salary(String newID, String newName, String newAddress,
-          String newPayMethod, double newRate, Union newEmployeeUnion)
+          String newPayMethod, double newRate, Boolean newEmployeeUnion)
         
         // protected Union employee_Union;
         {

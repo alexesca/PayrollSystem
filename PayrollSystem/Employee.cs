@@ -79,6 +79,9 @@ namespace PayrollSystem
 			}
 		}
 
+        public Boolean EmployeeUnion { get; set; }
+        public Double EmployeeTypeRate { get; set; }
+
         
 
 		protected String employee_ID;
@@ -87,7 +90,8 @@ namespace PayrollSystem
 		protected String employee_Address;
 		protected String employee_Paymethod;
 		protected String employee_Type;
-        protected Union employee_Union;
+        protected Boolean employee_Union;
+        protected Double employee_Type_Rate;
     }
 
     // If employee is from union, use the following
