@@ -21,6 +21,10 @@ namespace PayrollSystem
             this.tableset = table;
         }
 
+        public CreateEmployeeObjects()
+        {
+  
+        }
         private void DataTableToList()
         {
             int i = 0;
@@ -91,7 +95,7 @@ namespace PayrollSystem
             return employeeList;
         }
         
-        private void completeHourly(Employee newEmployee, String type, String id)
+        public void completeHourly(Employee newEmployee, String type, String id)
         {
             EmployeeHourly hourly = new EmployeeHourly();
             
@@ -113,7 +117,7 @@ namespace PayrollSystem
             employeeList.Add(hourly);
         }
 
-        private void completeSalary(Employee newEmployee, String type, String id)
+        public void completeSalary(Employee newEmployee, String type, String id)
         {
             Employee_Salary salary = new Employee_Salary();
 
@@ -136,7 +140,7 @@ namespace PayrollSystem
 
         }
 
-        private void completeComission(Employee newEmployee, String type, String id)
+        public void completeComission(Employee newEmployee, String type, String id)
         {
             CommEmployee commission = new CommEmployee();
 
