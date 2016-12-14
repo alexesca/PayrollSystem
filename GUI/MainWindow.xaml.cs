@@ -122,6 +122,8 @@ namespace GUI
                 textBoxShow.Text += "\n\n";
 
             }
+
+            
         
         }
     }

@@ -99,7 +99,8 @@ namespace PayrollSystem
             {
                 if(id == hourlyEmployeeTB[i][0].ToString())
                 {
-                    hourly.PeriodPaymentAmount = Double.Parse(hourlyEmployeeTB[i][2].ToString());
+                    hourly.PeriodPaymentAmount  = Double.Parse(hourlyEmployeeTB[i][2].ToString());
+                    hourly.HoursWorked          = Double.Parse(hourlyEmployeeTB[i][1].ToString());
                 }
             }
 
@@ -121,7 +122,7 @@ namespace PayrollSystem
             {
                 if (id == salaryEmployeeTB[i][0].ToString())
                 {
-                    salary.Rate = Double.Parse(salaryEmployeeTB[i][1].ToString());
+                    salary.SalaryAmount = Double.Parse(salaryEmployeeTB[i][1].ToString());
                 }
             }
 
@@ -144,7 +145,8 @@ namespace PayrollSystem
             {
                 if (id == commisionEmployeeTB[i][0].ToString())
                 {
-                    commission.commissionRate = Double.Parse(commisionEmployeeTB[i][2].ToString());
+                    commission.commissionRate   = Double.Parse(commisionEmployeeTB[i][2].ToString());
+                    commission.Commission       = Double.Parse(commisionEmployeeTB[i][1].ToString());
                 }
             }
 

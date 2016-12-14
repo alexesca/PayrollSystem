@@ -16,6 +16,7 @@ namespace PayrollSystem
     public class CommEmployee : Employee
 	{
         private double commRate;
+        private double commision;
 		public double commissionRate
         {
             get
@@ -28,6 +29,19 @@ namespace PayrollSystem
                 commRate = value;
             }
         } 
+
+        public double Commission
+        {
+            get
+            {
+                return this.commision;
+            }
+            set
+            {
+                this.commision = value;
+            }
+                
+        }
         
 
         // Default constructor
