@@ -15,13 +15,26 @@ namespace PayrollSystem
 {
     public class CommEmployee : Employee
 	{
-		public double commRate { get; protected set; }
+        private double commRate;
+		public double commissionRate
+        {
+            get
+            {
+                return commRate;
+            }
+
+            set
+            {
+                commRate = value;
+            }
+        } 
+        
 
         // Default constructor
         public CommEmployee()
         {
             employee_ID = "0000";
-            employee_Name = "Name";
+            employee_LName = "Name";
             employee_Address = "Address";
             employee_Paymethod = "PayMethod";
             employee_Type = "Type";
@@ -33,7 +46,7 @@ namespace PayrollSystem
             String newPayMethod, double newRate)
         {
             employee_ID = newID;
-            employee_Name = newName;
+            employee_LName = newName;
             employee_Address = newAddress;
             employee_Paymethod = newPayMethod;
             employee_Type = "Commission";
@@ -44,10 +57,10 @@ namespace PayrollSystem
 
         // Union employee
         public CommEmployee(String newID, String newName, String newAddress,
-            String newPayMethod, double newRate, Union newUnion)
+            String newPayMethod, double newRate, Boolean newUnion)
         {
             employee_ID = newID;
-            employee_Name = newName;
+            employee_LName = newName;
             employee_Address = newAddress;
             employee_Paymethod = newPayMethod;
             employee_Type = "Commission-Union";

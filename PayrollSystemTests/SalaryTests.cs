@@ -18,7 +18,7 @@ namespace EmployeeSalaryTests
         {
             Employee_Salary testEmployeeSalary = new Employee_Salary("1234", "John Smith", "123 Shadow Wood UT", "Mail",
                 0.05, new Union(0.3));
-            Assert.AreEqual(testEmployeeSalary.EmployeeName, "John Smith");
+            Assert.AreEqual(testEmployeeSalary.EmployeeLName, "John Smith");
             Assert.AreEqual(testEmployeeSalary.EmployeePaymethod, "Mail");
         }
 

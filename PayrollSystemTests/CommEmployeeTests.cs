@@ -16,12 +16,12 @@ namespace PayrollSystem.Tests
         {
             CommEmployee testEmp = new CommEmployee
                 ("1234", "John Smith", "123 Shadow UT", "Mailed check", 0.05);
-            Assert.AreEqual(testEmp.commRate, 0.05);
-            Assert.AreEqual(testEmp.EmployeeName, "John Smith");
+            Assert.AreEqual(testEmp.commissionRate, 0.05);
+            Assert.AreEqual(testEmp.EmployeeLName, "John Smith");
             Assert.AreEqual(testEmp.EmployeeAddress, "123 Shadow UT");
             Assert.AreEqual(testEmp.EmployeeID, "1234");
             Assert.AreEqual(testEmp.EmployeePaymethod, "Mailed check");
-            Assert.AreEqual(testEmp.commRate, 0.05);
+            Assert.AreEqual(testEmp.commissionRate, 0.05);
         }
 
         [TestMethod()]
@@ -30,8 +30,8 @@ namespace PayrollSystem.Tests
             CommEmployee testEmp = new CommEmployee();
             Assert.AreEqual(testEmp.EmployeeID, "0000");
             Assert.AreEqual(testEmp.EmployeeAddress, "Address");
-            Assert.AreEqual(testEmp.EmployeeName, "Name");
-            Assert.AreEqual(testEmp.commRate, 0);
+            Assert.AreEqual(testEmp.EmployeeLName, "Name");
+            Assert.AreEqual(testEmp.commissionRate, 0);
         }
 
         [TestMethod()]

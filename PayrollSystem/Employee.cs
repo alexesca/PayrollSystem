@@ -17,20 +17,33 @@ namespace PayrollSystem
 			}
 		}
 
-		public String EmployeeName
+		public String EmployeeFName
 		{
 			get
 			{
-				return employee_Name;
+				return employee_FName;
 			}
 			set
 			{
-				employee_Name = value;
+				employee_FName = value;
 			}
 
 		}
 
-		public String EmployeeAddress
+        public String EmployeeLName
+        {
+            get
+            {
+                return employee_LName;
+            }
+            set
+            {
+                employee_LName = value;
+            }
+
+        }
+
+        public String EmployeeAddress
 		{
 			get
 			{
@@ -66,12 +79,19 @@ namespace PayrollSystem
 			}
 		}
 
+        public Boolean EmployeeUnion { get; set; }
+        public Double EmployeeTypeRate { get; set; }
+
+        
+
 		protected String employee_ID;
-		protected String employee_Name;
+		protected String employee_FName;
+        protected string employee_LName;
 		protected String employee_Address;
 		protected String employee_Paymethod;
 		protected String employee_Type;
-        protected Union employee_Union;
+        protected Boolean employee_Union;
+        protected Double employee_Type_Rate;
     }
 
     // If employee is from union, use the following

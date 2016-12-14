@@ -1,24 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using DataTable = System.Data.DataTable;
 //To get it you need to og to Manage Nutget.
 //Download the Excel Data Reader.
 using Excel;
 using System.IO;
 using System.Windows.Forms;
+using PayrollSystem;
 
 namespace GUI
 {
@@ -41,6 +32,13 @@ namespace GUI
        // DataTable employeeTable;
        //Create a List of Datatables
        List<List< DataTable>> tableLits= new List<List<DataTable>>();
+        List<DataRow> employeesInfo = new List<DataRow>();
+        List<DataRow> hourlyEmployee = new List<DataRow>();
+        List<DataRow> salaryEmployee = new List<DataRow>();
+        List<DataRow> commisionEmployee = new List<DataRow>();
+        List<Employee> employeeList = new List<Employee>();
+        
+        
         private void MenuItemLoad_Click(object sender, RoutedEventArgs e)
         {
             //Enable the buttons
@@ -64,10 +62,13 @@ namespace GUI
                 reader.IsFirstRowAsColumnNames = true;
                 tableset = reader.AsDataSet();
                 comboBoxType.Items.Clear();
+                int i = 0;
+                
                 foreach (DataTable dt in tableset.Tables)
                 {
                     tableLits.Add(new List<DataTable> {dt});
                     comboBoxType.Items.Add(dt.TableName);
+                    
                 }
 
                 reader.Close();
@@ -77,6 +78,11 @@ namespace GUI
 
                 dataGridEmployee.ItemsSource = tableset.Tables["Employees"].DefaultView;
             }
+            // creating the employee generator to convert the table into objects
+            CreateEmployeeObjects employeeGenerator = new CreateEmployeeObjects(tableset);
+
+            // convert the table into employee object
+            employeeList = employeeGenerator.convertTableToEmployee();
         }
 
         private void comboBoxType_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -93,12 +99,30 @@ namespace GUI
 
         private void buttonAdd_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine(tableLits);
+            //Console.WriteLine(tableLits);
             //   Form1 form1 = new Form1();
             //  form1.Show();
             Add_Employee NewEmployee = new Add_Employee();
             NewEmployee.Show();
             
+        }
+
+        private void ShowTest_Click(object sender, RoutedEventArgs e)
+        {
+            for (int p = 0; p < employeeList.Count; p++)
+            {
+               
+                textBoxShow.Text += employeeList[p].EmployeeID + "\t";
+                textBoxShow.Text += employeeList[p].EmployeeFName + "\t";
+                textBoxShow.Text += employeeList[p].EmployeeLName + "\t";
+                textBoxShow.Text += employeeList[p].EmployeeAddress + "\t";
+                textBoxShow.Text += employeeList[p].EmployeePaymethod + "\t";
+                textBoxShow.Text += employeeList[p].EmployeeType + "\t";
+
+                textBoxShow.Text += "\n\n";
+
+            }
+        
         }
     }
 }

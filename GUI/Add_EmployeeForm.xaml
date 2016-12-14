@@ -5,12 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="Add_Employee" Height="283.083" Width="525.564">
+        Title="Add_Employee" Height="315.657" Width="525.564">
     <Grid>
-        <Grid HorizontalAlignment="Left" Height="232" Margin="10,10,0,0" VerticalAlignment="Top" Width="498">
-            <Button x:Name="button" Content="Done" HorizontalAlignment="Left" Height="31" Margin="403,191,0,0" VerticalAlignment="Top" Width="85" Click="button_Click"/>
-        </Grid>
-        <Label x:Name="Message" Content="Here we are going to add an employee&#xD;&#xA; &#xD;&#xA;:D" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="92" Width="337"/>
-
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="116,166,0,0" VerticalAlignment="Top" Width="159"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="116,42,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="380"/>
+        <Label x:Name="label1" Content="First Name" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" Margin="116,97,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="380"/>
+        <Label x:Name="label1_Copy" Content="Address" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1_Copy1" Content="Payment Method" HorizontalAlignment="Left" Margin="10,163,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkBox" Content="Is Union" HorizontalAlignment="Left" Margin="116,212,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="116,127,0,0" VerticalAlignment="Top" Width="159"/>
+        <Label x:Name="label1_Copy2" Content="Type" HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1_Copy3" Content="ID" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1_Copy4" Content="ID Employee" HorizontalAlignment="Left" Margin="116,10,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="323,248,0,0" Height="28"/>
+        <Button x:Name="button1" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="421,248,0,0" Height="28" Click="button1_Click"/>
+        <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="116,69,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="380"/>
+        <Label x:Name="label1_Copy5" Content="Last Name" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="62" Margin="295,127,0,0" Stroke="Black" VerticalAlignment="Top" Width="201"/>
+        <Label x:Name="label1_Copy7" Content="Address" HorizontalAlignment="Left" Margin="304,141,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="23" Margin="362,144,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="119"/>
     </Grid>
 </Window>
