@@ -75,8 +75,23 @@ namespace GUI
 
         private void Button_Cancel_Click(object sender, RoutedEventArgs e)
         {
-            Environment.Exit;
+            Environment.Exit(0);
         }
-    }
+        List<string> list = new List<string> { "Salary", "Hourly", "Comission" };
+
+        private void comboBox_Type_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            comboBox_Type.Items.Add(list);
+            string choose_Type = comboBox_Type.SelectedItem.ToString();
+          
+        }
+        List<string> list2 = new List<string> { "Email", "Check", "Direct deposit" };
+
+        private void Combox_MethopOptions_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           
+            Combox_MethopOptions.Items.Add("Email");
+            string choose_Type = comboBox_Type.SelectedItem.ToString();
+        }
     }
 }
