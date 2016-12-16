@@ -26,6 +26,7 @@ namespace GUI
             //  form1.Show();
 
         }
+        DataTable dt;
 
         DataSet tableset;
 
@@ -121,7 +122,7 @@ namespace GUI
 
         private void showBalanceEmplo()
         {
-            DataTable dt = new DataTable();
+            dt = new DataTable();
             dt = generator.toDataTable(employeeList);
             payRollTable.ItemsSource = dt.AsDataView();
         }
@@ -140,8 +141,19 @@ namespace GUI
 
         private void buttonPayAll_Click(object sender, RoutedEventArgs e)
         {
+
+            SaveFileDialog dlg = new SaveFileDialog();
+            // Display OpenFileDialog by calling ShowDialog method 
+
+            // Get the selected file name and call the  OnExportGridToCSV() function
+            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                //Exports the file
+                PayrollSystem.SaveFile.OnExportGridToCSV(dt, dlg.FileName);
+            }
+
             List<Employee> paidEmployee = returnEmployeeForeceipt();
-            foreach(Employee employee in employeeList)
+            foreach (Employee employee in employeeList)
             {
                 employee.EmployeeBalance = 0;
             }
@@ -149,6 +161,9 @@ namespace GUI
             buttonPayAll.IsEnabled = false;
             genarateList.IsEnabled = true;
             showBalanceEmplo();
+
+
+
         }
 
         private List<Employee> returnEmployeeForeceipt()
