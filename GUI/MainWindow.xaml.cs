@@ -169,6 +169,11 @@ namespace GUI
         {
 
         }
+
+        private void textBoxPath_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
 
