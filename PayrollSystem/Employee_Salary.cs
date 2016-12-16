@@ -19,6 +19,7 @@ namespace PayrollSystem
             set
             {
                 salaryAmount = value;
+                employee_Balance = value;
             }
         }
         private string paymentSalary { get; set; }

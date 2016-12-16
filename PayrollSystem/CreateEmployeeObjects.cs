@@ -145,8 +145,8 @@ namespace PayrollSystem
             {
                 if (id == commisionEmployeeTB[i][0].ToString())
                 {
-                    commission.commissionRate   = Double.Parse(commisionEmployeeTB[i][2].ToString());
                     commission.Commission       = Double.Parse(commisionEmployeeTB[i][1].ToString());
+                    commission.commissionRate   = Double.Parse(commisionEmployeeTB[i][2].ToString());
                 }
             }
 

@@ -27,6 +27,7 @@ namespace PayrollSystem
             set
             {
                 commRate = value;
+                employee_Balance = commRate * commision;
             }
         } 
 

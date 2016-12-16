@@ -37,7 +37,7 @@ namespace GUI
         List<DataRow> salaryEmployee = new List<DataRow>();
         List<DataRow> commisionEmployee = new List<DataRow>();
         List<Employee> employeeList = new List<Employee>();
-        
+        GenerateTable generator = new GenerateTable();
         
         private void MenuItemLoad_Click(object sender, RoutedEventArgs e)
         {
@@ -50,7 +50,6 @@ namespace GUI
 
             OpenFileDialog fileExcel = new OpenFileDialog();
             string path = fileExcel.FileName;
-            textBoxPath.Text = path;
 
             if (fileExcel.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -109,22 +108,66 @@ namespace GUI
 
         private void ShowTest_Click(object sender, RoutedEventArgs e)
         {
-            for (int p = 0; p < employeeList.Count; p++)
+            showBalanceEmplo();
+            
+            if(returnEmployeeForeceipt().Count > 0)
             {
-               
-                textBoxShow.Text += employeeList[p].EmployeeID + "\t";
-                textBoxShow.Text += employeeList[p].EmployeeFName + "\t";
-                textBoxShow.Text += employeeList[p].EmployeeLName + "\t";
-                textBoxShow.Text += employeeList[p].EmployeeAddress + "\t";
-                textBoxShow.Text += employeeList[p].EmployeePaymethod + "\t";
-                textBoxShow.Text += employeeList[p].EmployeeType + "\t";
-
-                textBoxShow.Text += "\n\n";
-
+                buttonPayAll.IsEnabled = true;
+                genarateList.IsEnabled = false;
             }
 
+
+        }
+
+        private void showBalanceEmplo()
+        {
+            DataTable dt = new DataTable();
+            dt = generator.toDataTable(employeeList);
+            payRollTable.ItemsSource = dt.AsDataView();
+        }
+
+        private void dataGridEmployee_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void dataGridEmployee_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            //System.Windows.MessageBox.Show(dataGridEmployee.SelectedIndex.ToString());
+            //dataGridEmployee.SelectedCells.Remove(e);
             
-        
+        }
+
+        private void buttonPayAll_Click(object sender, RoutedEventArgs e)
+        {
+            List<Employee> paidEmployee = returnEmployeeForeceipt();
+            foreach(Employee employee in employeeList)
+            {
+                employee.EmployeeBalance = 0;
+            }
+
+            buttonPayAll.IsEnabled = false;
+            genarateList.IsEnabled = true;
+            showBalanceEmplo();
+        }
+
+        private List<Employee> returnEmployeeForeceipt()
+        {
+            List<Employee> employeeBalance = new List<Employee>();
+            foreach (Employee t in employeeList)
+            {
+                if (t.EmployeeBalance > 0)
+                {
+                    employeeBalance.Add(t);
+                }
+            }
+
+            return employeeBalance;
+        }
+
+       private void getTheTable()
+        {
+
         }
     }
 }
