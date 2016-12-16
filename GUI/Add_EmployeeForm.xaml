@@ -7,14 +7,14 @@
         mc:Ignorable="d"
         Title="Add Employee" Height="315.657" Width="525.564">
     <Grid>
-        <ComboBox x:Name="Combox_MethopOptions" HorizontalAlignment="Left" Margin="116,166,0,0" VerticalAlignment="Top" Width="159" SelectionChanged="Combox_MethopOptions_SelectionChanged"/>
+        <ComboBox x:Name="Combox_MethopOptions" Loaded="Combox_MethopOptions_Loaded" HorizontalAlignment="Left" Margin="116,166,0,0" VerticalAlignment="Top" Width="159" SelectionChanged="Combox_MethopOptions_SelectionChanged"/>
         <TextBox x:Name="textBox_FirstName" HorizontalAlignment="Left" Height="23" Margin="116,42,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="380"/>
         <Label x:Name="label_Name" Content="First Name" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" IsEnabled="False"/>
         <TextBox x:Name="textBox_Address" HorizontalAlignment="Left" Height="23" Margin="116,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="380"/>
         <Label x:Name="label_Address" Content="Address" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top" IsEnabled="False"/>
         <Label x:Name="label_PaymentMethod" Content="Payment Method" HorizontalAlignment="Left" Margin="10,163,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="checkBox_IsUnion" Content="Is Union" HorizontalAlignment="Left" Margin="116,212,0,0" VerticalAlignment="Top" Height="22" Width="77"/>
-        <ComboBox x:Name="comboBox_Type" HorizontalAlignment="Left" Margin="116,127,0,0" VerticalAlignment="Top" Width="159" SelectionChanged="comboBox_Type_SelectionChanged"/>
+        <ComboBox Loaded="comboBox_Type_Loaded" x:Name="comboBox_Type" HorizontalAlignment="Left" Margin="116,127,0,0" VerticalAlignment="Top" Width="159" SelectionChanged="comboBox_Type_SelectionChanged"/>
         <Label x:Name="label_Type" Content="Type" HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top" IsEnabled="False"/>
         <Label x:Name="label_ID" IsEnabled="False" Content="ID" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label_ID_Generated" Content="ID Employee" HorizontalAlignment="Left" Margin="116,10,0,0" VerticalAlignment="Top"/>
