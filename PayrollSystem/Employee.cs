@@ -79,6 +79,18 @@ namespace PayrollSystem
 			}
 		}
 
+        public Double EmployeeBalance
+        {
+            get
+            {
+                return this.employee_Balance;
+            }
+            set
+            {
+                this.employee_Balance = value;
+            }
+        }
+
         public Boolean EmployeeUnion { get; set; }
         public Double EmployeeTypeRate { get; set; }
 
@@ -92,6 +104,7 @@ namespace PayrollSystem
 		protected String employee_Type;
         protected Boolean employee_Union;
         protected Double employee_Type_Rate;
+        protected Double employee_Balance;
     }
 
     // If employee is from union, use the following

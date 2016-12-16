@@ -76,7 +76,7 @@ namespace PayrollSystem
 
 		public double calculatePayment()
 		{
-			return periodPaymentAmount = hourlyPay * totalHoursWorked;
+			return employee_Balance = hourlyPay * totalHoursWorked;
 		}
 
 		public double addTime(double timeWorked)

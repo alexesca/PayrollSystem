@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PayrollSystem;
 
 namespace GUI
 {
@@ -28,7 +29,8 @@ namespace GUI
         bool union = true;
         string paymentMethod = "cash";
         double typeRate = 0.0;
-        
+        CreateEmployeeObjects CEO = new CreateEmployeeObjects();
+
         public Add_Employee()
         {
             InitializeComponent();
@@ -42,14 +44,68 @@ namespace GUI
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            EmployeeFactory employeefactory = new EmployeeFactory();
-            Employee temp_Employee = employeefactory.getEmployee(type);
-            temp_Employee.EmployeeFName = firstName + "" + lastName;
-            temp_Employee.EmployeePaymethod = paymentMethod;
-            temp_Employee.EmployeeType = type;
-            temp_Employee.EmployeeUnion = union;
-            temp_Employee.EmployeeTypeRate = typeRate; 
+
+            Employee newEmployee = new Employee();
+
+            newEmployee.EmployeeID = label_ID_Generated.Content.ToString();
+            newEmployee.EmployeeFName = textBox_FirstName.Text;
+            newEmployee.EmployeeLName = textBox_LastName.Text;
+            newEmployee.EmployeePaymethod = Combox_MethopOptions.SelectedItem.ToString();
+            newEmployee.EmployeeAddress = textBox_Address.Text;
+            newEmployee.EmployeeType = comboBox_Type.SelectedItem.ToString();
+
+            type = Combox_MethopOptions.SelectedItem.ToString();
+
+            if (type == "Hourly")
+            {
+                
+
+                CEO.completeHourly(newEmployee, type, newEmployee.EmployeeID);
+            }
+            else if (type == "Salary")
+            {
+                CEO.completeSalary(newEmployee, type, newEmployee.EmployeeID);
+            }
+            else if (type == "Commission")
+            {
+                CEO.completeComission(newEmployee, type, newEmployee.EmployeeID);
+            }
 
         }
+
+        private void Button_Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+        List<string> list = new List<string> { "Salary", "Hourly", "Comission" };
+
+        private void comboBox_Type_Loaded(object sender, RoutedEventArgs e)
+        {
+            var combo = sender as ComboBox;
+            combo.ItemsSource = list;
+            combo.SelectedIndex = 0;
+        }
+        private void comboBox_Type_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedcomboitem = sender as ComboBox;
+            string name = selectedcomboitem.SelectedItem as string;
+            
+        }
+
+        List<string> list2 = new List<string> { "Email", "Check", "Direct deposit" };
+
+        private void Combox_MethopOptions_Loaded(object sender, RoutedEventArgs e)
+        {
+            var combo = sender as ComboBox;
+            combo.ItemsSource = list2;
+            combo.SelectedIndex = 0;
+        }
+        private void Combox_MethopOptions_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedcomboitem = sender as ComboBox;
+            string name = selectedcomboitem.SelectedItem as string;
+            
+        }
+
     }
 }

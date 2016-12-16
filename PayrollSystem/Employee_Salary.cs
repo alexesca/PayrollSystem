@@ -8,17 +8,18 @@ namespace PayrollSystem
 {
    public class Employee_Salary : Employee
     {
-        private double rate;
+        private double salaryAmount;
 
-        public double Rate
+        public double SalaryAmount
         {
             get
             {
-                return rate;
+                return salaryAmount;
             }
             set
             {
-                rate = value;
+                salaryAmount = value;
+                employee_Balance = value;
             }
         }
         private string paymentSalary { get; set; }
