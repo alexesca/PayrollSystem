@@ -6,16 +6,22 @@ using System.Windows.Controls;
 using DataTable = System.Data.DataTable;
 //To get it you need to og to Manage Nutget.
 //Download the Excel Data Reader.
-using Excel;
+using Excel ;
 using System.IO;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
+using System.Xml.Linq;
+using Microsoft.Office.Interop.Excel;
 using PayrollSystem;
+using SaveFileDialog = Microsoft.Win32.SaveFileDialog;
+using Window = System.Windows.Window;
 
 namespace GUI
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// Excel
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -26,6 +32,7 @@ namespace GUI
             //  form1.Show();
 
         }
+        
 
         DataSet tableset;
 
@@ -38,7 +45,8 @@ namespace GUI
         List<DataRow> commisionEmployee = new List<DataRow>();
         List<Employee> employeeList = new List<Employee>();
         GenerateTable generator = new GenerateTable();
-        
+        DataTable dt = new DataTable();
+
         private void MenuItemLoad_Click(object sender, RoutedEventArgs e)
         {
             //Enable the buttons
@@ -61,7 +69,7 @@ namespace GUI
                 reader.IsFirstRowAsColumnNames = true;
                 tableset = reader.AsDataSet();
                 comboBoxType.Items.Clear();
-                int i = 0;
+                //int i = 0;
                 
                 foreach (DataTable dt in tableset.Tables)
                 {
@@ -98,12 +106,13 @@ namespace GUI
 
         private void buttonAdd_Click(object sender, RoutedEventArgs e)
         {
+            /*
             //Console.WriteLine(tableLits);
             //   Form1 form1 = new Form1();
             //  form1.Show();
             Add_Employee NewEmployee = new Add_Employee();
             NewEmployee.Show();
-            
+            */
         }
 
         private void ShowTest_Click(object sender, RoutedEventArgs e)
@@ -121,7 +130,7 @@ namespace GUI
 
         private void showBalanceEmplo()
         {
-            DataTable dt = new DataTable();
+            
             dt = generator.toDataTable(employeeList);
             payRollTable.ItemsSource = dt.AsDataView();
         }
@@ -133,15 +142,15 @@ namespace GUI
 
         private void dataGridEmployee_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-            //System.Windows.MessageBox.Show(dataGridEmployee.SelectedIndex.ToString());
-            //dataGridEmployee.SelectedCells.Remove(e);
+            System.Windows.MessageBox.Show(dataGridEmployee.SelectedIndex.ToString());
+            dataGridEmployee.SelectedCells.Remove(e);
             
         }
 
         private void buttonPayAll_Click(object sender, RoutedEventArgs e)
         {
             List<Employee> paidEmployee = returnEmployeeForeceipt();
-            foreach(Employee employee in employeeList)
+            foreach (Employee employee in employeeList)
             {
                 employee.EmployeeBalance = 0;
             }
@@ -149,6 +158,11 @@ namespace GUI
             buttonPayAll.IsEnabled = false;
             genarateList.IsEnabled = true;
             showBalanceEmplo();
+            SaveFileDialog FilePathSave = new SaveFileDialog();
+
+            PayrollSystem.SaveFile.OnExportGridToCSV(dt,FilePathSave.FileName);
+            //SaveFile.OnExportGridToCSV(dt, FilePathSave.FileName ); 
+
         }
 
         private List<Employee> returnEmployeeForeceipt()
@@ -165,7 +179,8 @@ namespace GUI
             return employeeBalance;
         }
 
-       private void getTheTable()
+        
+        private void getTheTable()
         {
 
         }
