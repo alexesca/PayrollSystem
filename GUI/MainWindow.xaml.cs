@@ -112,8 +112,8 @@ namespace GUI
             
             if(returnEmployeeForeceipt().Count > 0)
             {
-                buttonPayAll.IsEnabled = true;
-                genarateList.IsEnabled = false;
+                buttonPayAll.IsEnabled  = true;
+                genarateList.IsEnabled  = false;
             }
 
 
